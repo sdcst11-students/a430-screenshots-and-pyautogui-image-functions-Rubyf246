@@ -25,17 +25,28 @@ def main():
     try:
         x,y= pyautogui.locateCenterOnScreen('assets/newgame.png', confidence=0.9)
         pyautogui.moveTo(x,y)
-        pyautogui.click (x,y)
+        pyautogui.click ()
     except:
-        x=1215
-        y=357
-        coordsplant = pyautogui.locateCenterOnScreen('assets/plantatree.png', confidence = 0.9)
-        pyautogui.moveTo(coordsplant)
-        for i in coordsplant:
-            pyautogui.mouseDown(i)
+        pass
+def plantatree():
+        x,y = pyautogui.locateCenterOnScreen('assets/plantatree.png', confidence = 0.9)
+        pyautogui.moveTo(x,y)
+        for i in range(350):
+            pyautogui.click()
+            try: 
+                x,y= pyautogui.locateCenterOnScreen('assets/chopatree.png', confidence = 0.9)
+                pyautogui.moveTo(x,y)
+                for i in range(100):
+                    pyautogui.click()
+            except: 
+                pass
+
 
 
 main()
+plantatree()
+
+
 
 
 
