@@ -1,5 +1,6 @@
 #!python3
 import pyautogui
+import time
 
 #Main Task
 #Click the “plant a tree” button repeatedly
@@ -29,22 +30,32 @@ def main():
     except:
         pass
 def plantatree():
-        x,y = pyautogui.locateCenterOnScreen('assets/plantatree.png', confidence = 0.9)
+        x,y = pyautogui.locateCenterOnScreen('assets/newplantatree.png', confidence = 0.9)
         pyautogui.moveTo(x,y)
-        for i in range(350):
+        for i in range(300):
             pyautogui.click()
             try: 
-                x,y= pyautogui.locateCenterOnScreen('assets/chopatree.png', confidence = 0.9)
+                x,y= pyautogui.locateCenterOnScreen('assets/newchopatree.png', confidence = 0.9)
                 pyautogui.moveTo(x,y)
-                for i in range(350):
+                for i in range(379):
                     pyautogui.click()
             except: 
                 pass
+def florist():
+    x,y= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
+    time.sleep(2)
+    pyautogui.moveTo(x,y)
+    pyautogui.click()
 
+    x,y= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
+    time.sleep(2)
+    pyautogui.moveTo(x,y)
+    pyautogui.click()
 
 
 main()
 plantatree()
+florist()
 
 
 
