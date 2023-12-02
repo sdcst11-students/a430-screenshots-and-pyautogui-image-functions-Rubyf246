@@ -34,7 +34,7 @@ def plantatree():
     try:
         x,y = pyautogui.locateCenterOnScreen('newplantatree.png', confidence=0.6) 
         pyautogui.moveTo(x,y)
-        for i in range(300):
+        while True:
             
             pyautogui.click()
     except:
