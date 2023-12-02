@@ -34,21 +34,24 @@ def plantatree():
     try:
         x,y = pyautogui.locateCenterOnScreen('newplantatree.png', confidence=0.6) 
         pyautogui.moveTo(x,y)
-        while True:
-            
+        i =0
+        while i<500:
             pyautogui.click()
+            i = i + 1
     except:
         pass
         #for i in range(10):
         #    pyautogui.click()
-            
-            
-            
-        #    try: 
-        #        x,y= pyautogui.locateCenterOnScreen('assets/newchopatree.png', confidence = 0.9)
-        #        pyautogui.moveTo(x,y)
-        #        for i in range(400):
-        #            pyautogui.click()
+def chopatree():        
+    try: 
+        x,y= pyautogui.locateCenterOnScreen('newchopatree.png')
+        pyautogui.moveTo(x,y)
+        j = 0
+        while j < 500:
+            pyautogui.click()
+            j = j+1
+    except:
+        pass
             
             
             
@@ -66,7 +69,11 @@ def plantatree():
 #     pyautogui.click()
 #
 main()
-plantatree()
+k = 0
+while k < 6:
+    plantatree()
+    chopatree()
+    k = k+1
 #florist()
 
 
