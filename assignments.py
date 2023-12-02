@@ -24,38 +24,50 @@ import time
 
 def main():
     try:
-        x,y= pyautogui.locateCenterOnScreen('assets/newgame.png', confidence=0.9)
+        x,y = pyautogui.locateCenterOnScreen('assets/newgame.png', confidence=0.9)
         pyautogui.moveTo(x,y)
         pyautogui.click ()
     except:
         pass
+     
 def plantatree():
-        x,y = pyautogui.locateCenterOnScreen('assets/newplantatree.png', confidence = 0.9)
+    try:
+        x,y = pyautogui.locateCenterOnScreen('newplantatree.png', confidence=0.6) 
         pyautogui.moveTo(x,y)
         for i in range(300):
+            
             pyautogui.click()
-            try: 
-                x,y= pyautogui.locateCenterOnScreen('assets/newchopatree.png', confidence = 0.9)
-                pyautogui.moveTo(x,y)
-                for i in range(379):
-                    pyautogui.click()
-            except: 
-                pass
-def florist():
-    x,y= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
-    time.sleep(2)
-    pyautogui.moveTo(x,y)
-    pyautogui.click()
-
-    x,y= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
-    time.sleep(2)
-    pyautogui.moveTo(x,y)
-    pyautogui.click()
-
-
+    except:
+        pass
+        #for i in range(10):
+        #    pyautogui.click()
+            
+            
+            
+        #    try: 
+        #        x,y= pyautogui.locateCenterOnScreen('assets/newchopatree.png', confidence = 0.9)
+        #        pyautogui.moveTo(x,y)
+        #        for i in range(400):
+        #            pyautogui.click()
+            
+            
+            
+            
+#def florist():
+#    
+#     x,y= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
+#     time.sleep(2)
+#     pyautogui.moveTo(x,y)
+#     pyautogui.click()
+#
+#     x,y= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
+#     time.sleep(2)
+#     pyautogui.moveTo(x,y)
+#     pyautogui.click()
+#
 main()
 plantatree()
-florist()
+#florist()
 
 
 
