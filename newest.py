@@ -29,7 +29,7 @@ def main():
         pyautogui.click ()
     except:
         pass
-     
+    
 def plantatree():
     try:
         x,y = pyautogui.locateCenterOnScreen('newplantatree.png', confidence=0.6) 
@@ -40,56 +40,41 @@ def plantatree():
             i = i + 1
     except:
         pass
-        #for i in range(10):
-        #    pyautogui.click()
-def chopatree():        
-    #try: 
-        chop= pyautogui.locateCenterOnScreen('newchopatree.png', confidence=0.3)
-   
-        if chop:
-         
-            print(str(chop),'found',chop.x,chop.y)
-            pyautogui.click(chop)
-        
-        #pyautogui.moveTo(chop)
-        #j = 0
-        #while j<500:
-        #  
-        #    pyautogui.click(chop)
-        #    j = j + 1
-            
-    #except:
-    #    pass
 
+def chopatree():
+    try:
+        x,y = pyautogui.locateCenterOnScreen('newchopatree.png') 
+        pyautogui.moveTo(x,y)
+        j=0
+        while j<503:
+            pyautogui.click()
+            print (j)
+            j = j + 1
+    except:
+        pass    
+    
+    #try:
+        #position2 = pyautogui.locateCenterOnScreen("newchopatree.png", confidence=0.3)
+        #x = position2[0]
+        #y = position2[1]
+        #print(x,y)
+        #print('Found! Clicking above the image')
+#
+        #pyautogui.moveTo(x,y)
+        #time.sleep(1)
+       ## pyautogui.click(button='left')
+        #time.sleep(1)
+    #except:
+        #pass
+        #print("Fail! Didn't find the image")
+    
 def master():
     main()
     k = 0
-    while k < 3:
+    while k < 6:
+        print (k)
         plantatree()
         chopatree()
-        k = k +1 
+        k = k+1
     
-    #florist()     
-#def florist():
-#    try: 
-#        coordsflor= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
-#        #coordsflor is not None
-#        pyautogui.moveTo(coordsflor)
-#        pyautogui.click()
-#    except:
-#        master()
-    
-
-#coordsgather= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
-#pyautogui.moveTo(coordsgather)
-#pyautogui.click()
-
-#florist()
-
-
-#chopatree()
 master()
-
-
-
-

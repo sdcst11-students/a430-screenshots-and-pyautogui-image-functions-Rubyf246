@@ -43,53 +43,43 @@ def plantatree():
         #for i in range(10):
         #    pyautogui.click()
 def chopatree():        
-    #try: 
-        chop= pyautogui.locateCenterOnScreen('newchopatree.png', confidence=0.3)
+    try: 
+        x,y= pyautogui.locateCenterOnScreen('newchopatree.png')
+        pyautogui.moveTo(x,y)
+        j = 0
+        while j < 503:
+            pyautogui.click()
+            print (j)
+            j = j+1
+    except:
+        pass
    
-        if chop:
-         
-            print(str(chop),'found',chop.x,chop.y)
-            pyautogui.click(chop)
-        
-        #pyautogui.moveTo(chop)
-        #j = 0
-        #while j<500:
-        #  
-        #    pyautogui.click(chop)
-        #    j = j + 1
-            
-    #except:
-    #    pass
-
 def master():
     main()
     k = 0
-    while k < 3:
+    while k < 6:
+        print (k)
         plantatree()
         chopatree()
-        k = k +1 
-    
-    #florist()     
+    k = k+1
 #def florist():
-#    try: 
-#        coordsflor= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
-#        #coordsflor is not None
-#        pyautogui.moveTo(coordsflor)
-#        pyautogui.click()
-#    except:
-#        master()
-    
+#    
+#     x,y= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
+#     time.sleep(2)
+#     pyautogui.moveTo(x,y)
+#     pyautogui.click()
+#
+#     x,y= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
+#     time.sleep(2)
+#     pyautogui.moveTo(x,y)
+#     pyautogui.click()
+#
 
-#coordsgather= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
-#pyautogui.moveTo(coordsgather)
-#pyautogui.click()
 
 #florist()
 
 
-#chopatree()
 master()
-
 
 
 
