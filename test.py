@@ -35,6 +35,7 @@ def plantatree():
         x,y = pyautogui.locateCenterOnScreen('newplantatree.png', confidence=0.6) 
         pyautogui.moveTo(x,y)
         i=0
+        
         while i<500:
             pyautogui.click()
             i = i + 1
@@ -55,25 +56,44 @@ def chopatree():
         pass
    
 def master():
-    main()
-    k = 0
-    while k < 6:
-        print (k)
-        plantatree()
-        chopatree()
-    k = k+1
-#def florist():
-#    
-#     x,y= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.9)
-#     time.sleep(2)
-#     pyautogui.moveTo(x,y)
-#     pyautogui.click()
-#
-#     x,y= pyautogui.locateCenterOnScreen("assets/gather.png", confidence=0.9)
-#     time.sleep(2)
-#     pyautogui.moveTo(x,y)
-#     pyautogui.click()
-#
+    #main()
+    #k = 0
+    #while k < 6:
+    #    plantatree()
+    #    chopatree()
+    #k = k+1
+    while True:
+        florist()
+        gatherer()
+        ecoclick()
+        fotuneclick()
+        ecomerch()
+    
+def florist():
+        florists= pyautogui.locateCenterOnScreen("assets/florists.png", confidence=0.6)
+        pyautogui.moveTo(florists)
+        pyautogui.click()
+def gatherer():
+        gatherer = pyautogui.locateCenterOnScreen("assets/gather.png", confidence = 0.6)
+        pyautogui.moveTo(gatherer)
+        pyautogui.click()
+def ecoclick():
+        ec = pyautogui.locateCenterOnScreen("assets/ecoclick.png", confidence = 0.6)
+        pyautogui.moveTo(ec)
+        pyautogui.click()
+def fotuneclick():
+        fc = pyautogui.locateCenterOnScreen("assets/fortuneclick.png", confidence = 0.6)
+        pyautogui.moveTo(fc)
+        pyautogui.click()
+def ecomerch():
+        em = pyautogui.locateCenterOnScreen("assets/ecomerch.png", confidence = 0.6)
+        pyautogui.moveTo(em)
+        pyautogui.click()
+       
+               
+
+
+
 
 
 #florist()
