@@ -24,18 +24,15 @@ import time
 
 def main():
     try:
-        x,y = pyautogui.locateCenterOnScreen('assets/newgame.png', confidence=0.9)
+        x,y= pyautogui.locateCenterOnScreen('assets/newgame.png', confidence=0.9)
         pyautogui.moveTo(x,y)
         pyautogui.click ()
     except:
         pass
-     
 def plantatree():
-    try:
-        x,y = pyautogui.locateCenterOnScreen('newplantatree.png', confidence=0.6) 
+        x,y = pyautogui.locateCenterOnScreen('assets/newplantatree.png', confidence = 0.9)
         pyautogui.moveTo(x,y)
-        i=0
-        while i<500:
+        for i in range(300):
             pyautogui.click()
             i = i + 1
     except:
