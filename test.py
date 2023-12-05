@@ -60,7 +60,7 @@ def master():
     pyautogui.alert("begin autoclick")
     
     k = 0
-    while k < 6:
+    while k < 4:
         plantatree()
         chopatree()
         k = k+1
