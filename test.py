@@ -36,7 +36,7 @@ def plantatree():
         pyautogui.moveTo(x,y)
         i=0
         
-        while i<5:
+        while i<500:
             pyautogui.click()
             i = i + 1
     except:
@@ -48,7 +48,7 @@ def chopatree():
         x,y= pyautogui.locateCenterOnScreen('newchopatree.png')
         pyautogui.moveTo(x,y)
         j = 0
-        while j < 5:
+        while j < 500:
             pyautogui.click()
             print (j)
             j = j+1
